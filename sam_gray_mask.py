@@ -18,7 +18,16 @@ from segment_anything import SamAutomaticMaskGenerator, sam_model_registry
 
 import argparse
 parser = argparse.ArgumentParser("enlighten-anything")
-parser.add_argument('--source_dir', type=str, default='data/LOL/our485/high', help='directory of data to be segmented')
+
+#LOLv2-real
+#/data/liguanlin/Datasets/LowLight/LOL-v2/Real_captured/Test/Low
+#/data/liguanlin/Datasets/LowLight/LOL-v2/Real_captured/Test/Low
+#/data/liguanlin/Datasets/LowLight/LOL-v2/Synthetic/Test/Low
+#/data/liguanlin/Datasets/LowLight/LOL-v2/Synthetic/Train/Low
+
+#SID
+
+parser.add_argument('--source_dir', type=str, default='/data/liguanlin/Datasets/LowLight/LOL-v2/Synthetic/Test/Low', help='directory of data to be segmented')
 args = parser.parse_args()
 
 
@@ -50,11 +59,12 @@ for i, filename in enumerate(os.listdir(sourcedir)):
         #img[:,:,3] = 0
             
             # Binary
+        """
         os.makedirs(f'{sourcedir}_semanticB', exist_ok=True)
         for i, mask in enumerate(masks):
             save_path = os.path.join(f'{sourcedir}_semanticB', f'{os.path.splitext(filename)[0]}_semanticB_{i}.png')
             cv2.imwrite(save_path, np.uint8(mask["segmentation"]) * 255)
-            
+        """    
             #Color
         os.makedirs(f'{sourcedir}_semantic_gray', exist_ok=True)
         save_path = os.path.join(f'{sourcedir}_semantic_gray', f'{os.path.splitext(filename)[0]}_semantic.png')
