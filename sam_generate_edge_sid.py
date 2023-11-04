@@ -70,10 +70,14 @@ def main():
                     orimap = edge_detection.computeOrientation(edges)
                     edges = edge_detection.edgesNms(edges, orimap)
 
-                    # save edge
-                    os.makedirs(save_root_dir, exist_ok=True)
-                    save_path = os.path.join(save_root_dir, f'{os.path.splitext(filename)[0]}_semantic.png')
+
+                    save_folder = os.path.join(save_root_dir, subfolder)
+                    os.makedirs(save_folder, exist_ok=True)
+                    save_path = os.path.join(save_folder, filename)
+
                     print(save_path)
+
+                    # save edge
                     plt.imsave(save_path, edges, cmap='binary')
 
 
