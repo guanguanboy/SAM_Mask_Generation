@@ -1,23 +1,10 @@
 # Segmentation Guided Low-light Image Enhancement
-
+The code for generating edge maps using SAM.
 ## LOL
-`data/`
-`dataset.py`
+`sam_generate_edge_lol.py`
 
-## Model
+## SID
 `weights/`
 `model.py` 
 `fuse_block.py`
 
-## Criterion
-`loss.py`
-
-## Utils
-`segment_anything/`
-`sam.py`
-`utils.py`
-
-## Train and Test
-`train.py`
-`test.py`
-`evaluate.py`
