@@ -4,7 +4,5 @@ The code for generating edge maps using SAM.
 `sam_generate_edge_lol.py`
 
 ## SID
-`weights/`
-`model.py` 
-`fuse_block.py`
+`sam_generate_edge_sid.py`
 
